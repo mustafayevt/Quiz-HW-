@@ -35,5 +35,6 @@ namespace Quiz
         public int notAnswered { get; set; }
         public int correct { get; set; }
         public int incorrect { get; set; }
+        public Dictionary<int,int> QuestionsAndAnswers { get; set; }
     }
 }

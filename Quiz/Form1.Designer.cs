@@ -35,7 +35,8 @@
             this.acceptBtn = new MetroFramework.Controls.MetroButton();
             this.previousPage = new MetroFramework.Controls.MetroButton();
             this.nextPage = new MetroFramework.Controls.MetroButton();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.CircleProgressBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.QuestionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // questionRctxtbx
@@ -45,14 +46,14 @@
             this.questionRctxtbx.Location = new System.Drawing.Point(23, 63);
             this.questionRctxtbx.Name = "questionRctxtbx";
             this.questionRctxtbx.ReadOnly = true;
-            this.questionRctxtbx.Size = new System.Drawing.Size(1123, 96);
+            this.questionRctxtbx.Size = new System.Drawing.Size(1158, 86);
             this.questionRctxtbx.TabIndex = 0;
             this.questionRctxtbx.Text = "";
             // 
             // pageLbl
             // 
             this.pageLbl.AutoSize = true;
-            this.pageLbl.Location = new System.Drawing.Point(70, 452);
+            this.pageLbl.Location = new System.Drawing.Point(60, 483);
             this.pageLbl.Name = "pageLbl";
             this.pageLbl.Size = new System.Drawing.Size(35, 13);
             this.pageLbl.TabIndex = 2;
@@ -62,7 +63,7 @@
             // 
             this.submitBtn.BackgroundImage = global::Quiz.Properties.Resources.icons8_Enter_50px;
             this.submitBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.submitBtn.Location = new System.Drawing.Point(1017, 417);
+            this.submitBtn.Location = new System.Drawing.Point(1052, 448);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(129, 46);
             this.submitBtn.TabIndex = 3;
@@ -75,7 +76,7 @@
             // 
             this.acceptBtn.BackgroundImage = global::Quiz.Properties.Resources.icons8_Checked_Radio_Button_50px;
             this.acceptBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.acceptBtn.Location = new System.Drawing.Point(882, 417);
+            this.acceptBtn.Location = new System.Drawing.Point(917, 450);
             this.acceptBtn.Name = "acceptBtn";
             this.acceptBtn.Size = new System.Drawing.Size(129, 46);
             this.acceptBtn.TabIndex = 3;
@@ -83,13 +84,14 @@
             this.acceptBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.acceptBtn.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.acceptBtn.UseSelectable = true;
+            this.acceptBtn.Click += new System.EventHandler(this.acceptBtn_Click);
             // 
             // previousPage
             // 
             this.previousPage.AutoSize = true;
             this.previousPage.BackgroundImage = global::Quiz.Properties.Resources._1icons8_Next_page_50px;
             this.previousPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.previousPage.Location = new System.Drawing.Point(882, 365);
+            this.previousPage.Location = new System.Drawing.Point(917, 396);
             this.previousPage.Name = "previousPage";
             this.previousPage.Size = new System.Drawing.Size(129, 46);
             this.previousPage.TabIndex = 1;
@@ -106,7 +108,7 @@
             this.nextPage.AutoSize = true;
             this.nextPage.BackgroundImage = global::Quiz.Properties.Resources.icons8_Next_page_50px;
             this.nextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.nextPage.Location = new System.Drawing.Point(1017, 365);
+            this.nextPage.Location = new System.Drawing.Point(1052, 396);
             this.nextPage.Name = "nextPage";
             this.nextPage.Size = new System.Drawing.Size(129, 46);
             this.nextPage.TabIndex = 1;
@@ -115,41 +117,51 @@
             this.nextPage.UseSelectable = true;
             this.nextPage.Click += new System.EventHandler(this.nextPage_Click);
             // 
-            // bunifuCircleProgressbar1
+            // CircleProgressBar
             // 
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.White;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 3;
-            this.bunifuCircleProgressbar1.LineThickness = 2;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(-4, 406);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.DeepSkyBlue;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(67, 67);
-            this.bunifuCircleProgressbar1.TabIndex = 5;
-            this.bunifuCircleProgressbar1.Value = 0;
+            this.CircleProgressBar.animated = false;
+            this.CircleProgressBar.animationIterval = 5;
+            this.CircleProgressBar.animationSpeed = 300;
+            this.CircleProgressBar.BackColor = System.Drawing.Color.White;
+            this.CircleProgressBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CircleProgressBar.BackgroundImage")));
+            this.CircleProgressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CircleProgressBar.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.CircleProgressBar.LabelVisible = true;
+            this.CircleProgressBar.LineProgressThickness = 3;
+            this.CircleProgressBar.LineThickness = 2;
+            this.CircleProgressBar.Location = new System.Drawing.Point(-4, 437);
+            this.CircleProgressBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CircleProgressBar.MaxValue = 100;
+            this.CircleProgressBar.Name = "CircleProgressBar";
+            this.CircleProgressBar.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.CircleProgressBar.ProgressColor = System.Drawing.Color.DeepSkyBlue;
+            this.CircleProgressBar.Size = new System.Drawing.Size(67, 67);
+            this.CircleProgressBar.TabIndex = 5;
+            this.CircleProgressBar.Value = 0;
+            // 
+            // QuestionPanel
+            // 
+            this.QuestionPanel.AutoScroll = true;
+            this.QuestionPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.QuestionPanel.Location = new System.Drawing.Point(23, 155);
+            this.QuestionPanel.Name = "QuestionPanel";
+            this.QuestionPanel.Size = new System.Drawing.Size(1158, 232);
+            this.QuestionPanel.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1169, 467);
-            this.Controls.Add(this.bunifuCircleProgressbar1);
+            this.ClientSize = new System.Drawing.Size(1204, 501);
+            this.Controls.Add(this.QuestionPanel);
+            this.Controls.Add(this.questionRctxtbx);
+            this.Controls.Add(this.CircleProgressBar);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.pageLbl);
             this.Controls.Add(this.previousPage);
             this.Controls.Add(this.nextPage);
-            this.Controls.Add(this.questionRctxtbx);
             this.Name = "Form1";
             this.Resizable = false;
             this.Text = "Quiz";
@@ -166,7 +178,8 @@
         private MetroFramework.Controls.MetroButton previousPage;
         private MetroFramework.Controls.MetroButton acceptBtn;
         private MetroFramework.Controls.MetroButton submitBtn;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar CircleProgressBar;
+        private System.Windows.Forms.FlowLayoutPanel QuestionPanel;
     }
 }
 

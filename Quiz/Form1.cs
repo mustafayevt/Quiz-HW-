@@ -25,31 +25,31 @@ namespace Quiz
         int currentQuestion = 0;
         private void LoadQuestions()
         {
-
-            foreach (var item in this.Controls.OfType<RadioButton>())
-            {
-                item.Dispose();
-            }
-            pageLbl.Text = $"{currentQuestion + 1} of {questionsBlock.Count}";
-            int X = questionRctxtbx.Location.X;
-            int Y = questionRctxtbx.Location.Y;
-            Y += 80;
+            QuestionPanel.Controls.Clear();
+            pageLbl.Text = $"{questionsBlock.Count - result.notAnswered} of {questionsBlock.Count}";
+            int X = QuestionPanel.Location.X;
+            int Y = QuestionPanel.Location.Y;
             int answerCount = questionsBlock[currentQuestion].Answers.Count;
             RadioButton[] answers = new RadioButton[answerCount];
             for (int i = 0; i < answerCount; i++)
             {
                 Y += 40;
                 answers[i] = new RadioButton();
+
                 answers[i].Text = $"{questionsBlock[currentQuestion].Answers[i].Text}";
+
                 answers[i].Location = new Point(X, Y);
+
+                //answers[i].MaximumSize = new Size(questionRctxtbx.Width, 30);
                 answers[i].AutoSize = true;
-                answers[i].MaximumSize = new Size(questionRctxtbx.Size.Width, 30);
+
                 answers[i].Tag = questionsBlock[currentQuestion].Answers[i];
-                answers[i].AutoSize = true;
-                answers[i].Font = new Font(FontFamily.GenericSansSerif, 11, FontStyle.Italic);
+
+                answers[i].Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Italic);
                 questionRctxtbx.Text = questionsBlock[currentQuestion].Text.TrimStart();
+                QuestionPanel.Controls.Add(answers[i]);
             }
-            this.Controls.AddRange(answers);
+            //questionPanel.Controls.AddRange(answers);
         }
 
         private void LoadXML()
@@ -62,6 +62,7 @@ namespace Quiz
                 {
                     questionsBlock = (List<QuestionBlock>)serializer.Deserialize(fileStream);
                     result.notAnswered = questionsBlock.Count;
+                    result.QuestionsAndAnswers = new Dictionary<int, int>();
                 }
             }
         }
@@ -69,15 +70,38 @@ namespace Quiz
         private void nextPage_Click(object sender, EventArgs e)
         {
             if (currentQuestion == questionsBlock.Count-1) return;
+            if (currentQuestion == questionsBlock.Count - 2 && result.QuestionsAndAnswers.ContainsKey(questionsBlock[currentQuestion+1].id)) return;
             currentQuestion++;
+            if (result.QuestionsAndAnswers.ContainsKey(questionsBlock[currentQuestion].id))
+                nextPage.PerformClick();
             LoadQuestions();
         }
 
         private void previousPage_Click(object sender, EventArgs e)
         {
             if (currentQuestion == 0) return;
+            if (currentQuestion == 1 && result.QuestionsAndAnswers.ContainsKey(questionsBlock[currentQuestion-1].id)) return;
             currentQuestion--;
+            if (result.QuestionsAndAnswers.ContainsKey(questionsBlock[currentQuestion].id))
+                previousPage.PerformClick();
             LoadQuestions();
+        }
+
+        private void acceptBtn_Click(object sender, EventArgs e)
+        {
+            foreach (var item in QuestionPanel.Controls.OfType<RadioButton>())
+            {
+                if (item.Checked)
+                {
+                    result.QuestionsAndAnswers[questionsBlock[currentQuestion].id] = (item.Tag as Answer).id;
+                    result.notAnswered--;
+                    if ((item.Tag as Answer).IsCorrect == "Yes") result.correct++;
+                    else result.incorrect++;
+                    CircleProgressBar.Value += 100 / questionsBlock.Count;
+                    if (currentQuestion == questionsBlock.Count - 1) previousPage.PerformClick();
+                    else nextPage.PerformClick();
+                }
+            }
         }
     }
 }
