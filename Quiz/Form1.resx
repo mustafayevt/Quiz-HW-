@@ -117,17 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1icons8_Next_page_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1icons8_Next_page_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_Checked_Radio_Button_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Checked_Radio_Button_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_Next_page_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Next_page_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_Enter_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Enter_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuCircleProgressbar1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEMAAABDCAYAAADHyrhzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQISURBVHhe7ZstUGMxFIWRK5FI5MqVyEokshK5EonEIVeu
+        RCIrkZXISv7nSWQlkj1f5oTJdHaXlibv5XVyZu6U3rzenNzc3Py8sNfQ0NDQ0NDQ0LDj6Lru29PT0yQV
+        6fZdvNtQY09eXl6unp+f7yTvn0in56/1ebozDlJjpjRK8pY0NIh0S33OU5HulbK/yPzx8fEn0WTT44Ea
+        dawGLFYatFCDzu/v77/7sX9CjT6k8frNTWoDZ6H3Y3VDRI9Eml5OyZ/ROD+yMRgmsjWVpM69k+0TP1If
+        3JPRCUt9P88d1rKNU7pYj3LQbxfVARoMqYTgL3rTxUWAo+XwmIfmpetbCw7hW0iZ3NRFxcGQJALtkO7h
+        4eGHi/oHEZE4gtxw5KLeIA6Hqj/kEjjw3UX9wmuG0CuDkRDSTuGT7y7qB4qCMypnaAwREauQAw7oFHO6
+        tro8VNnEvYD0liM+AzmDzoGXOqiftYgqi/P9pVXVQJxO4SanLIkWq8tAlZy4MpJVlUtj8Qv5gyneqjJQ
+        JSEqyBlWVQeGizvsrVh0qAJWf1VHRYR4zuBaLDpkPGyaao6KiCQ6yB15O04G9wk7KuBvq6uGuIZzE/Ge
+        WJUHMhqGiGRuVfUQ10s4Zx8q8i6nTqMYIhFEhDuwsyoPZDicQGmIDLbs/grEO2zkxDvPrEICwqAMv1k1
+        Goh3OGjKtmUgGjAoubNqNIjDW595TsVkKI690STPCJIn3LPlOhkL63227FaNBnLCubnnmVFkMJxtjtQZ
+        kXues1INE479GSY3Vo0G4hzWGkSIVduB9xx2xsKq0YBoNvdTq7YDy28MKkJerRoNxDtMrUwCVm0PGYuL
+        l6p3q6sQ53AUyPLAqu0RPSyp5pjvM8T1ER1pVR4kU9RoZhRxjofWeQ+IUy+PZaiIb4zmPMkzhYyWOR8o
+        ADpMPMudv8j4hT09s6paxCEiKbOFkIcPordrjo4VnuWuLSTRUe0CjH2IOZaNYI/FeNWoumk2favWy1v5
+        ZMparnMlqS+QKMUrJvn+3reqwvBegsqLZOsvQFzi/S9R6pETwwVHuPLBd7MxTwwWrXLIIZXbIbOhIiRJ
+        mDjj2Or+ocq52RsdssBBLioOnE8nREdI8q80N4Vf5cWLIksc5KJi8BlLTJbUOVxErMK99HH/U8KwyR4l
+        1MOwUOPD9CnpaprRPiCiJNXLhGg4iJV+6xc42GZKJwqibclgeWptiCCJNbyvSIS732eb9CJO1O84mZ+l
+        Dratwe+RbQSvBledgjDW5w73CzWME2wu3F8glElW750jtyqv94r0OiCU1ZCpGn+lxqRh/l/Rs0TDDGcR
+        JTa3WyDE1dAJjSQS7CT+DYMo4Rp0+EccP97Q0NDQ0NDQMHLs7f0B6HS0YkMgkmoAAAAASUVORK5CYII=
+</value>
   </data>
 </root>
