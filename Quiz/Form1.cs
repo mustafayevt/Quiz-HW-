@@ -197,5 +197,10 @@ namespace Quiz
             nextPage.PerformClick();
             LoadQuestions();
         }
+
+        private void CircleProgressBar_ProgressChanged(object sender, EventArgs e)
+        {
+            if (CircleProgressBar.Value == 100) submitBtn.PerformClick();
+        }
     }
 }

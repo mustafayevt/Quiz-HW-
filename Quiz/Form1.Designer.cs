@@ -128,6 +128,7 @@
             this.CircleProgressBar.Size = new System.Drawing.Size(67, 67);
             this.CircleProgressBar.TabIndex = 5;
             this.CircleProgressBar.Value = 0;
+            this.CircleProgressBar.ProgressChanged += new System.EventHandler(this.CircleProgressBar_ProgressChanged);
             // 
             // submitBtn
             // 
