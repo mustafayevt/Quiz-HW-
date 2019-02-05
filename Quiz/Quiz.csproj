@@ -114,5 +114,11 @@
   <ItemGroup>
     <None Include="Resources\icons8_Enter_50px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Checkmark_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Multiply_50px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
