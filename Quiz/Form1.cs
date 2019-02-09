@@ -12,15 +12,17 @@ using System.Xml.Serialization;
 
 namespace Quiz
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class Form1 : Form
     {
         public Form1()
         {
+            Library library = new Library();
+            library.ShowDialog();
             InitializeComponent();
             LoadXML();
-            LoadQuestions();
         }
-        List<QuestionBlock> questionsBlock;
+
+        public List<QuestionBlock> questionsBlock;
         Result result = new Result();
         int currentQuestion = 0;
         bool submited = false;
@@ -50,9 +52,10 @@ namespace Quiz
                 answers[i].MouseEnter += MouseEnterRDBTN;
                 answers[i].MouseLeave += MouseLeaveRDBTN;
 
-                answers[i].BackColor = DefaultBackColor;
+                answers[i].BackColor = Color.Transparent;
+                answers[i].ForeColor = DarkMode.Value?Color.LightCoral:Color.Aqua;
                 answers[i].Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Italic);
-                questionRctxtbx.Text = $"{questionsBlock[currentQuestion].id + 1}) {questionsBlock[currentQuestion].Text.TrimStart()}";
+                questionRctxtbx.Text = $"{currentQuestion + 1}) {questionsBlock[currentQuestion].Text.TrimStart()}";
                 QuestionPanel.Controls.Add(answers[i]);
             }
             if (result.QuestionsAndAnswers.ContainsKey(questionsBlock[currentQuestion].id) || submited)
@@ -86,27 +89,36 @@ namespace Quiz
 
         private void MouseLeaveRDBTN(object sender, EventArgs e)
         {
-            (sender as RadioButton).BackColor = DefaultBackColor;
+            (sender as RadioButton).BackColor = Color.Transparent;
         }
 
         private void MouseEnterRDBTN(object sender, EventArgs e)
         {
-            (sender as RadioButton).BackColor = Color.SkyBlue;
+            (sender as RadioButton).BackColor = Color.FromArgb(58, 46, 57);
         }
 
         private void LoadXML()
         {
-            //QuestionsXML.xml
-            XmlSerializer serializer = new XmlSerializer(typeof(List<QuestionBlock>));
-            if (File.Exists("QuestionsXML.xml"))
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "XML Files (*.xml)|*.xml";
+            ofd.FilterIndex = 0;
+            if(ofd.ShowDialog()== DialogResult.OK)
             {
-                using (FileStream fileStream = new FileStream("QuestionsXML.xml", FileMode.Open))
+                XmlSerializer serializer = new XmlSerializer(typeof(List<QuestionBlock>));
+                if (File.Exists(ofd.FileName))
                 {
-                    questionsBlock = (List<QuestionBlock>)serializer.Deserialize(fileStream);
-                    result.notAnswered = questionsBlock.Count;
-                    result.QuestionsAndAnswers = new Dictionary<int, int>();
+                    using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.Open))
+                    {
+                        questionsBlock = (List<QuestionBlock>)serializer.Deserialize(fileStream);
+                        questionsBlock.Shuffle();
+                        questionsBlock.ForEach(x => x.Answers.Shuffle());
+                        result.notAnswered = questionsBlock.Count;
+                        result.QuestionsAndAnswers = new Dictionary<int, int>();
+                    }
                 }
             }
+            //QuestionsXML.xml
+            LoadQuestions();
         }
 
         private void nextPage_Click(object sender, EventArgs e)
@@ -201,6 +213,45 @@ namespace Quiz
         private void CircleProgressBar_ProgressChanged(object sender, EventArgs e)
         {
             if (CircleProgressBar.Value == 100) submitBtn.PerformClick();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void bunifuSwitch1_Click(object sender, EventArgs e)
+        {
+            if (DarkMode.Value)
+            {
+                MainPanel.GradientBottomLeft = Color.FromArgb(30, 85, 92);
+                MainPanel.GradientTopLeft = Color.FromArgb(1, 22, 56);
+                MainPanel.GradientTopRight = Color.FromArgb(163, 22, 33);
+
+                dragPanel.GradientBottomLeft = Color.FromArgb(41, 51, 92);
+                dragPanel.GradientBottomRight = Color.FromArgb(244, 34, 114);
+
+                questionRctxtbx.ForeColor = Color.LightCoral;
+                foreach (var item in QuestionPanel.Controls.OfType<RadioButton>())
+                {
+                    (item as RadioButton).ForeColor = Color.LightCoral;
+                }
+            }
+            else
+            {
+                MainPanel.GradientBottomLeft = Color.DarkCyan;
+                MainPanel.GradientTopLeft = Color.DarkGray;
+                MainPanel.GradientTopRight = Color.DarkOliveGreen;
+
+                dragPanel.GradientBottomLeft = Color.DarkCyan;
+                dragPanel.GradientBottomRight = Color.DarkGray;
+
+                questionRctxtbx.ForeColor = Color.Aqua;
+                foreach (var item in QuestionPanel.Controls.OfType<RadioButton>())
+                {
+                    (item as RadioButton).ForeColor = Color.Aqua;
+                }
+            }
         }
     }
 }

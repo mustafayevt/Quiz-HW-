@@ -117,7 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>629, 6</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dragPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADASURBVChTDcM7soJAEEDR3pIwwCAwfAQB+YvWe4mxsbGx
+        uTtu76k6YuJZTTywZc2SjgkjGh5UnF3U2ZEdG1bMmdIyoKfS21V7O7HnmScWzBgzpK+yR5vu0cyBHWuW
+        dExoaVQe4VUf4cKRPRtWzJkyZqDyDHZ9BisnXnjmiQUzHhmqvMxNX2bjzIEta5Z0TBipvP27vv0rF47s
+        2LBizpRW5eP96ce7ceXEC1vWLJjxqPL1/vXr3blx5sCODUs6JvoD6bS5ZcCXVbgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="MainPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE9SURBVChTBcENV1IxAIDhnTp2KsuVS5w0uBN3gV0YMGCA
+        fH+bZqmdOvX//8jb8wiZHrhM92TpjmY60ksHJmnPOu34lrY8pw3/0gpxFg+U4p5q3FGPWzpxwyiuWMYl
+        x7jgKc75G2eID2HDl7DGhCV5WBDCnBRmLMKUQ7jlR5jwJ4wQp36O8jO++ltu/ISWHzPwI2Y+sfNDHv2A
+        3z4i3rkxn92IK5eouSGFG9B3kanrsXVdHlyHXy4g3toBn2wfbXtY26VpO/RsYGLbrG2Le1vwYpuIN6bD
+        mQmUTJvMtGiYgq5pMjYNVqbOncl5Mg5xogs+as+FblDRdXKdE7Qj6RsWusZRX/NTZ4jXKudUOZSqYdQ1
+        TlnaKmOoqsxVhb0yPKoy4pW0vJcZ57JKWVaoSUMhy/TlFVOp2clLvssS/wEIf5U6VbCvigAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
   <data name="CircleProgressBar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEMAAABDCAYAAADHyrhzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -141,4 +165,13 @@
         JTa3WyDE1dAJjSQS7CT+DYMo4Rp0+EccP97Q0NDQ0NDQMHLs7f0B6HS0YkMgkmoAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="bunifuColorTransition1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>159, 11</value>
+  </metadata>
+  <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>333, 9</value>
+  </metadata>
+  <metadata name="bunifuElipse2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>492, 6</value>
+  </metadata>
 </root>

@@ -36,6 +36,9 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\Desktop\icon\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="GongShell">
+      <HintPath>..\..\..\..\Desktop\GongShell.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -66,17 +69,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ShuffleList.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Library.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library.Designer.cs">
+      <DependentUpon>Library.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryElementcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LibraryElementcs.Designer.cs">
+      <DependentUpon>LibraryElementcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Questions.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Library.resx">
+      <DependentUpon>Library.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryElementcs.resx">
+      <DependentUpon>LibraryElementcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +141,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Multiply_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Double Left_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Double Right_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Submit for Approval_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick Box_50px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

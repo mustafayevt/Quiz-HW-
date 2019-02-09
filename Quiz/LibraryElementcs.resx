@@ -117,38 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8_Enter_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Enter_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE/SURBVChTDcrXToIxAIBR39MLExONxhlQgTKEIiBlll0E
+        pCJQcdU40pj4bJ//uT5b8VUf8TRCPk9Qb/dov8B8rrDfG1x4xf9+EP6+2IrPm4iHDnLZR60NejPBvMyx
+        7wvcxxr/tSH8vEXR3CImNeSshbId9GKAWRmsm+Ke5/jXR4JfR7ErEYMSclRF3dXR0zZm3sU+DHHLMX49
+        I2xsFBtpROsa2ZGoXhk9rGJMAztp42Y9vB0SFndRLF8iqklkLYNqXqPbRUy3jO0r3KiBH2vCtBfF/ClC
+        xpClS1QlhVYZTD2PbRVxuoLvKcKgGcXUASJzhMydoQoxdPEKU05hb7O4Wh7fuCG0K1GM7yKu9pDJQ1T6
+        GJ09x+TjWJnAlQS+kiOoQhRPthFnO8jYLupiH504xKROsJlzXO4CX0gQimn+ASCxDQz2vmeLAAAAAElF
+        TkSuQmCC
+</value>
   </data>
-  <data name="icons8_Next_page_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Next_page_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_Checked_Radio_Button_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Checked_Radio_Button_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_Multiply_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Multiply_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_Checkmark_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Checkmark_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1icons8_Next_page_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1icons8_Next_page_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cancel_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancel_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Double Left_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Double Left_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Double Right_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Double Right_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Submit for Approval_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Submit for Approval_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Tick Box_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tick Box_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="bunifuColorTransition1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>104, 17</value>
+  </metadata>
+  <metadata name="bunifuFormFadeTransition1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>280, 17</value>
+  </metadata>
 </root>

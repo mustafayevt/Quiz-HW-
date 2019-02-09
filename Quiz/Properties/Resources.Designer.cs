@@ -73,6 +73,36 @@ namespace Quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cancel_50px {
+            get {
+                object obj = ResourceManager.GetObject("Cancel_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Double_Left_50px {
+            get {
+                object obj = ResourceManager.GetObject("Double Left_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Double_Right_50px {
+            get {
+                object obj = ResourceManager.GetObject("Double Right_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Checked_Radio_Button_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Checked_Radio_Button_50px", resourceCulture);
@@ -116,6 +146,26 @@ namespace Quiz.Properties {
         internal static System.Drawing.Bitmap icons8_Next_page_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Next_page_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Submit_for_Approval_50px {
+            get {
+                object obj = ResourceManager.GetObject("Submit for Approval_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tick_Box_50px {
+            get {
+                object obj = ResourceManager.GetObject("Tick Box_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
