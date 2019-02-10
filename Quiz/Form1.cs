@@ -53,7 +53,7 @@ namespace Quiz
                 answers[i].MouseLeave += MouseLeaveRDBTN;
 
                 answers[i].BackColor = Color.Transparent;
-                answers[i].ForeColor = DarkMode.Value?Color.LightCoral:Color.Aqua;
+                answers[i].ForeColor = DarkMode.Value ? Color.LightCoral : Color.Aqua;
                 answers[i].Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Italic);
                 questionRctxtbx.Text = $"{currentQuestion + 1}) {questionsBlock[currentQuestion].Text.TrimStart()}";
                 QuestionPanel.Controls.Add(answers[i]);
@@ -81,7 +81,7 @@ namespace Quiz
                 }
                 catch (Exception)
                 {
-                    
+
                 }
             }
             else QuestionPanel.Enabled = true;
@@ -99,24 +99,19 @@ namespace Quiz
 
         private void LoadXML()
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "XML Files (*.xml)|*.xml";
-            ofd.FilterIndex = 0;
-            if(ofd.ShowDialog()== DialogResult.OK)
+            XmlSerializer serializer = new XmlSerializer(typeof(List<QuestionBlock>));
+            if (File.Exists(Library.filePath))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<QuestionBlock>));
-                if (File.Exists(ofd.FileName))
+                using (FileStream fileStream = new FileStream(Library.filePath, FileMode.Open))
                 {
-                    using (FileStream fileStream = new FileStream(ofd.FileName, FileMode.Open))
-                    {
-                        questionsBlock = (List<QuestionBlock>)serializer.Deserialize(fileStream);
-                        questionsBlock.Shuffle();
-                        questionsBlock.ForEach(x => x.Answers.Shuffle());
-                        result.notAnswered = questionsBlock.Count;
-                        result.QuestionsAndAnswers = new Dictionary<int, int>();
-                    }
+                    questionsBlock = (List<QuestionBlock>)serializer.Deserialize(fileStream);
+                    questionsBlock.Shuffle();
+                    questionsBlock.ForEach(x => x.Answers.Shuffle());
+                    result.notAnswered = questionsBlock.Count;
+                    result.QuestionsAndAnswers = new Dictionary<int, int>();
                 }
             }
+
             //QuestionsXML.xml
             LoadQuestions();
         }
@@ -126,7 +121,7 @@ namespace Quiz
             if (currentQuestion == questionsBlock.Count - 1) return;
             if (submited)
             {
-                for (int i = currentQuestion+1; i<questionsBlock.Count; i++)
+                for (int i = currentQuestion + 1; i < questionsBlock.Count; i++)
                 {
                     if (result.QuestionsAndAnswers.ContainsKey(questionsBlock[i].id))
                     {
@@ -148,7 +143,7 @@ namespace Quiz
             if (currentQuestion == 0) return;
             if (submited)
             {
-                for (int i = currentQuestion-1; i >= 0; i--)
+                for (int i = currentQuestion - 1; i >= 0; i--)
                 {
                     if (result.QuestionsAndAnswers.ContainsKey(questionsBlock[i].id))
                     {

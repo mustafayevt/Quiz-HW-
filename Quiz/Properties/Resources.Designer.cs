@@ -103,6 +103,16 @@ namespace Quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Add_Property_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Add_Property_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Checked_Radio_Button_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Checked_Radio_Button_50px", resourceCulture);
@@ -146,6 +156,16 @@ namespace Quiz.Properties {
         internal static System.Drawing.Bitmap icons8_Next_page_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Next_page_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pack_blue_7_14_512 {
+            get {
+                object obj = ResourceManager.GetObject("Pack_blue_7_14-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

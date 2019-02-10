@@ -35,13 +35,9 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.dragPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.LibraryPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.libraryElementcs1 = new Quiz.LibraryElementcs();
-            this.libraryElementcs2 = new Quiz.LibraryElementcs();
-            this.libraryElementcs3 = new Quiz.LibraryElementcs();
-            this.libraryElementcs4 = new Quiz.LibraryElementcs();
+            this.LibraryMainPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.LibraryPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse3
@@ -79,7 +75,8 @@
             // 
             this.LibraryPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LibraryPanel.BackgroundImage")));
             this.LibraryPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LibraryPanel.Controls.Add(this.flowLayoutPanel1);
+            this.LibraryPanel.Controls.Add(this.metroButton1);
+            this.LibraryPanel.Controls.Add(this.LibraryMainPanel);
             this.LibraryPanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(85)))), ((int)(((byte)(92)))));
             this.LibraryPanel.GradientBottomRight = System.Drawing.Color.Empty;
             this.LibraryPanel.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(22)))), ((int)(((byte)(56)))));
@@ -90,49 +87,27 @@
             this.LibraryPanel.Size = new System.Drawing.Size(985, 473);
             this.LibraryPanel.TabIndex = 8;
             // 
-            // flowLayoutPanel1
+            // LibraryMainPanel
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.libraryElementcs1);
-            this.flowLayoutPanel1.Controls.Add(this.libraryElementcs2);
-            this.flowLayoutPanel1.Controls.Add(this.libraryElementcs3);
-            this.flowLayoutPanel1.Controls.Add(this.libraryElementcs4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 14);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(976, 417);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.LibraryMainPanel.AutoScroll = true;
+            this.LibraryMainPanel.BackColor = System.Drawing.Color.Transparent;
+            this.LibraryMainPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.LibraryMainPanel.Location = new System.Drawing.Point(19, 35);
+            this.LibraryMainPanel.Name = "LibraryMainPanel";
+            this.LibraryMainPanel.Size = new System.Drawing.Size(949, 374);
+            this.LibraryMainPanel.TabIndex = 0;
             // 
-            // libraryElementcs1
+            // metroButton1
             // 
-            this.libraryElementcs1.BackColor = System.Drawing.Color.Red;
-            this.libraryElementcs1.Location = new System.Drawing.Point(3, 3);
-            this.libraryElementcs1.Name = "libraryElementcs1";
-            this.libraryElementcs1.Size = new System.Drawing.Size(124, 384);
-            this.libraryElementcs1.TabIndex = 0;
-            // 
-            // libraryElementcs2
-            // 
-            this.libraryElementcs2.BackColor = System.Drawing.Color.Red;
-            this.libraryElementcs2.Location = new System.Drawing.Point(133, 3);
-            this.libraryElementcs2.Name = "libraryElementcs2";
-            this.libraryElementcs2.Size = new System.Drawing.Size(124, 384);
-            this.libraryElementcs2.TabIndex = 0;
-            // 
-            // libraryElementcs3
-            // 
-            this.libraryElementcs3.BackColor = System.Drawing.Color.Red;
-            this.libraryElementcs3.Location = new System.Drawing.Point(263, 3);
-            this.libraryElementcs3.Name = "libraryElementcs3";
-            this.libraryElementcs3.Size = new System.Drawing.Size(124, 384);
-            this.libraryElementcs3.TabIndex = 0;
-            // 
-            // libraryElementcs4
-            // 
-            this.libraryElementcs4.BackColor = System.Drawing.Color.Red;
-            this.libraryElementcs4.Location = new System.Drawing.Point(393, 3);
-            this.libraryElementcs4.Name = "libraryElementcs4";
-            this.libraryElementcs4.Size = new System.Drawing.Size(124, 384);
-            this.libraryElementcs4.TabIndex = 0;
+            this.metroButton1.BackColor = System.Drawing.Color.Transparent;
+            this.metroButton1.BackgroundImage = global::Quiz.Properties.Resources.icons8_Add_Property_50px;
+            this.metroButton1.Location = new System.Drawing.Point(913, 415);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(50, 50);
+            this.metroButton1.TabIndex = 1;
+            this.metroButton1.UseCustomBackColor = true;
+            this.metroButton1.UseCustomForeColor = true;
+            this.metroButton1.UseSelectable = true;
             // 
             // Library
             // 
@@ -146,7 +121,6 @@
             this.Name = "Library";
             this.Text = "Library";
             this.LibraryPanel.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -157,10 +131,7 @@
         private Bunifu.Framework.UI.BunifuGradientPanel LibraryPanel;
         private Bunifu.Framework.UI.BunifuGradientPanel dragPanel;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private LibraryElementcs libraryElementcs1;
-        private LibraryElementcs libraryElementcs2;
-        private LibraryElementcs libraryElementcs3;
-        private LibraryElementcs libraryElementcs4;
+        private System.Windows.Forms.FlowLayoutPanel LibraryMainPanel;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
