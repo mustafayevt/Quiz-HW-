@@ -106,12 +106,18 @@ namespace Quiz
                 {
                     questionsBlock = (List<QuestionBlock>)serializer.Deserialize(fileStream);
                     questionsBlock.Shuffle();
+
+                    SelectQuestionCount select = new SelectQuestionCount(questionsBlock.Count);
+                    selectQuestionCountForm selectForm = new selectQuestionCountForm(select);
+                    selectForm.ShowDialog();
+                    questionsBlock.RemoveRange(0, questionsBlock.Count - select.value);
+
                     questionsBlock.ForEach(x => x.Answers.Shuffle());
                     result.notAnswered = questionsBlock.Count;
                     result.QuestionsAndAnswers = new Dictionary<int, int>();
                 }
             }
-
+            
             //QuestionsXML.xml
             LoadQuestions();
         }
@@ -162,6 +168,7 @@ namespace Quiz
 
         private void acceptBtn_Click(object sender, EventArgs e)
         {
+            if (!QuestionPanel.Enabled) return;
             foreach (var item in QuestionPanel.Controls.OfType<RadioButton>())
             {
                 if (item.Checked)
@@ -171,6 +178,8 @@ namespace Quiz
                     if ((item.Tag as Answer).IsCorrect == "Yes") result.correct++;
                     else result.incorrect++;
                     CircleProgressBar.Value += 100 / questionsBlock.Count;
+                    QuestionPanel.Enabled = false;
+
                     nextPage.PerformClick();
                 }
             }

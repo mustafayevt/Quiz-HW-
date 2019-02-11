@@ -57,5 +57,6 @@ namespace Quiz
             filePath = (sender as UserControl1).Tag.ToString();
             this.Dispose();
         }
+        
     }
 }
