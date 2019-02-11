@@ -32,8 +32,8 @@
             this.LibraryPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.slider = new MetroFramework.Controls.MetroTrackBar();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.countLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.countLbl = new System.Windows.Forms.Label();
             this.LibraryPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,18 +96,6 @@
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
-            // countLbl
-            // 
-            this.countLbl.BackColor = System.Drawing.Color.Transparent;
-            this.countLbl.Font = new System.Drawing.Font("Leelawadee", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countLbl.ForeColor = System.Drawing.Color.SteelBlue;
-            this.countLbl.Location = new System.Drawing.Point(3, 86);
-            this.countLbl.Name = "countLbl";
-            this.countLbl.Size = new System.Drawing.Size(628, 88);
-            this.countLbl.TabIndex = 1;
-            this.countLbl.Text = "label1";
-            this.countLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
@@ -119,6 +107,18 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "HOW MANY QUESTION DO YOU WANT?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // countLbl
+            // 
+            this.countLbl.BackColor = System.Drawing.Color.Transparent;
+            this.countLbl.Font = new System.Drawing.Font("Leelawadee", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countLbl.ForeColor = System.Drawing.Color.SteelBlue;
+            this.countLbl.Location = new System.Drawing.Point(3, 86);
+            this.countLbl.Name = "countLbl";
+            this.countLbl.Size = new System.Drawing.Size(628, 88);
+            this.countLbl.TabIndex = 1;
+            this.countLbl.Text = "label1";
+            this.countLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SelectQuestionCount
             // 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Quiz
 {
-    public partial class UserControl1 : UserControl
+    public partial class xmlLibraryElementUC : UserControl
     {
-        public UserControl1()
+        public xmlLibraryElementUC()
         {
             InitializeComponent();
             Random rand = new Random();

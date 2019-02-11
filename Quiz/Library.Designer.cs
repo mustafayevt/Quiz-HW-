@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Library));
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.dragPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.LibraryPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.addQuestionBtn = new MetroFramework.Controls.MetroButton();
             this.LibraryMainPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.dragPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.LibraryPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,27 +49,6 @@
             // 
             this.bunifuElipse4.ElipseRadius = 50;
             this.bunifuElipse4.TargetControl = this.LibraryPanel;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.dragPanel;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // dragPanel
-            // 
-            this.dragPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dragPanel.BackgroundImage")));
-            this.dragPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.dragPanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(51)))), ((int)(((byte)(92)))));
-            this.dragPanel.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(34)))), ((int)(((byte)(114)))));
-            this.dragPanel.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dragPanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dragPanel.Location = new System.Drawing.Point(-1, -15);
-            this.dragPanel.Name = "dragPanel";
-            this.dragPanel.Quality = 10;
-            this.dragPanel.Size = new System.Drawing.Size(976, 52);
-            this.dragPanel.TabIndex = 9;
             // 
             // LibraryPanel
             // 
@@ -98,6 +77,7 @@
             this.addQuestionBtn.UseCustomBackColor = true;
             this.addQuestionBtn.UseCustomForeColor = true;
             this.addQuestionBtn.UseSelectable = true;
+            this.addQuestionBtn.Click += new System.EventHandler(this.addQuestionBtn_Click);
             // 
             // LibraryMainPanel
             // 
@@ -108,6 +88,27 @@
             this.LibraryMainPanel.Name = "LibraryMainPanel";
             this.LibraryMainPanel.Size = new System.Drawing.Size(949, 374);
             this.LibraryMainPanel.TabIndex = 0;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.dragPanel;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // dragPanel
+            // 
+            this.dragPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dragPanel.BackgroundImage")));
+            this.dragPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dragPanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(51)))), ((int)(((byte)(92)))));
+            this.dragPanel.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(34)))), ((int)(((byte)(114)))));
+            this.dragPanel.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dragPanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dragPanel.Location = new System.Drawing.Point(-1, -15);
+            this.dragPanel.Name = "dragPanel";
+            this.dragPanel.Quality = 10;
+            this.dragPanel.Size = new System.Drawing.Size(976, 52);
+            this.dragPanel.TabIndex = 9;
             // 
             // Library
             // 

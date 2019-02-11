@@ -15,6 +15,13 @@ namespace Quiz
         public addQuestionUC()
         {
             InitializeComponent();
+            answersPanel.Controls.Add(new createAnswerUC());
+            answersPanel.Controls.Add(new createAnswerUC());
+        }
+
+        private void addAnswerPctrbx_Click(object sender, EventArgs e)
+        {
+            answersPanel.Controls.Add(new createAnswerUC());
         }
     }
 }

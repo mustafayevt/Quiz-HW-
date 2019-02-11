@@ -92,7 +92,7 @@
             // 
             // bunifuElipse3
             // 
-            this.bunifuElipse3.ElipseRadius = 20;
+            this.bunifuElipse3.ElipseRadius = 30;
             this.bunifuElipse3.TargetControl = this;
             // 
             // createQuestionForm

@@ -78,6 +78,12 @@
     <Compile Include="addQuestionUC.Designer.cs">
       <DependentUpon>addQuestionUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="createAnswerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="createAnswerUC.Designer.cs">
+      <DependentUpon>createAnswerUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="createQuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,14 +118,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Questions.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="xmlLibraryElementUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="xmlLibraryElementUC.Designer.cs">
+      <DependentUpon>xmlLibraryElementUC.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="addQuestionUC.resx">
       <DependentUpon>addQuestionUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createAnswerUC.resx">
+      <DependentUpon>createAnswerUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="createQuestionForm.resx">
       <DependentUpon>createQuestionForm.cs</DependentUpon>
@@ -146,8 +155,8 @@
     <EmbeddedResource Include="selectQuestionCountForm.resx">
       <DependentUpon>selectQuestionCountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="xmlLibraryElementUC.resx">
+      <DependentUpon>xmlLibraryElementUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -204,6 +213,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Save_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_50px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Plus_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Trash_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Trash_50px_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

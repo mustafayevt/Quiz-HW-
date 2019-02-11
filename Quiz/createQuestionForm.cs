@@ -15,6 +15,7 @@ namespace Quiz
         public createQuestionForm()
         {
             InitializeComponent();
+            MainPanel.Controls.Add(new addQuestionUC());
         }
     }
 }

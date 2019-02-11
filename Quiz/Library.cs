@@ -41,7 +41,7 @@ namespace Quiz
             List<string> xmls = LoadFiles();
             foreach (var item in xmls)
             {
-                UserControl1 uc = new UserControl1();
+                xmlLibraryElementUC uc = new xmlLibraryElementUC();
                 uc.Tag = item;
                 uc.name = Path.GetFileName(item);
                 uc.buttonClick += Uc_Click;
@@ -54,9 +54,13 @@ namespace Quiz
 
         private void Uc_Click(object sender, EventArgs e)
         {
-            filePath = (sender as UserControl1).Tag.ToString();
+            filePath = (sender as xmlLibraryElementUC).Tag.ToString();
             this.Dispose();
         }
-        
+
+        private void addQuestionBtn_Click(object sender, EventArgs e)
+        {
+            new createQuestionForm().ShowDialog();
+        }
     }
 }
