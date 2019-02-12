@@ -15,6 +15,7 @@ namespace Quiz
         public SelectQuestionCount(int count)
         {
             InitializeComponent();
+            slider.Minimum = 0;
             slider.Maximum = count;
             slider.Value = count;
             countLbl.Text = $"{slider.Value} of {slider.Maximum}";
@@ -29,6 +30,11 @@ namespace Quiz
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
+            if (slider.Value == 0)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Can't select zero");
+                return;
+            }
             this.Dispose();
         }
     }

@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(634, 272);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "selectQuestionCountForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "selectQuestionCountForm";
             this.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.selectQuestionCountForm_ControlRemoved);
             this.ResumeLayout(false);

@@ -36,7 +36,7 @@ namespace Quiz
             return xmls;
         }
 
-        private void addXmls()
+        public void addXmls()
         {
             List<string> xmls = LoadFiles();
             foreach (var item in xmls)
@@ -47,9 +47,6 @@ namespace Quiz
                 uc.buttonClick += Uc_Click;
                 LibraryMainPanel.Controls.Add(uc);
             }
-            Button b = new Button();
-            b.Click += Uc_Click;
-            LibraryMainPanel.Controls.Add(b);
         }
 
         private void Uc_Click(object sender, EventArgs e)
@@ -61,6 +58,8 @@ namespace Quiz
         private void addQuestionBtn_Click(object sender, EventArgs e)
         {
             new createQuestionForm().ShowDialog();
+            LibraryMainPanel.Controls.Clear();
+            addXmls();
         }
     }
 }

@@ -230,7 +230,6 @@
             // 
             this.QuestionPanel.AutoScroll = true;
             this.QuestionPanel.BackColor = System.Drawing.Color.Transparent;
-            this.QuestionPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.QuestionPanel.Location = new System.Drawing.Point(17, 160);
             this.QuestionPanel.Name = "QuestionPanel";
             this.QuestionPanel.Size = new System.Drawing.Size(1158, 232);
@@ -312,6 +311,7 @@
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quiz";
             this.dragPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

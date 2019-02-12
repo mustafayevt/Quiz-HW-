@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.answerTxtbx = new MetroFramework.Controls.MetroTextBox();
-            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.idLbl = new System.Windows.Forms.Label();
+            this.RightAnswer = new Bunifu.Framework.UI.BunifuCheckbox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.answerTxtbx.CustomButton.UseSelectable = true;
             this.answerTxtbx.CustomButton.Visible = false;
             this.answerTxtbx.Lines = new string[0];
-            this.answerTxtbx.Location = new System.Drawing.Point(0, 0);
+            this.answerTxtbx.Location = new System.Drawing.Point(23, 0);
             this.answerTxtbx.MaxLength = 32767;
             this.answerTxtbx.Name = "answerTxtbx";
             this.answerTxtbx.PasswordChar = '\0';
@@ -71,21 +72,6 @@
             this.answerTxtbx.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.answerTxtbx.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroRadioButton1
-            // 
-            this.metroRadioButton1.AutoSize = true;
-            this.metroRadioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.metroRadioButton1.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
-            this.metroRadioButton1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.metroRadioButton1.Location = new System.Drawing.Point(505, -2);
-            this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(133, 25);
-            this.metroRadioButton1.TabIndex = 1;
-            this.metroRadioButton1.Text = "Right Answer";
-            this.metroRadioButton1.UseCustomBackColor = true;
-            this.metroRadioButton1.UseCustomForeColor = true;
-            this.metroRadioButton1.UseSelectable = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Quiz.Properties.Resources.icons8_Trash_50px_1;
@@ -97,13 +83,37 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // idLbl
+            // 
+            this.idLbl.AutoSize = true;
+            this.idLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idLbl.Location = new System.Drawing.Point(1, 3);
+            this.idLbl.Name = "idLbl";
+            this.idLbl.Size = new System.Drawing.Size(16, 16);
+            this.idLbl.TabIndex = 3;
+            this.idLbl.Text = "1";
+            // 
+            // RightAnswer
+            // 
+            this.RightAnswer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.RightAnswer.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.RightAnswer.Checked = false;
+            this.RightAnswer.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.RightAnswer.ForeColor = System.Drawing.Color.White;
+            this.RightAnswer.Location = new System.Drawing.Point(528, 1);
+            this.RightAnswer.Name = "RightAnswer";
+            this.RightAnswer.Size = new System.Drawing.Size(20, 20);
+            this.RightAnswer.TabIndex = 4;
+            this.RightAnswer.OnChange += new System.EventHandler(this.RightAnswer_OnChange);
+            // 
             // createAnswerUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
+            this.Controls.Add(this.RightAnswer);
+            this.Controls.Add(this.idLbl);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.metroRadioButton1);
             this.Controls.Add(this.answerTxtbx);
             this.Name = "createAnswerUC";
             this.Size = new System.Drawing.Size(821, 23);
@@ -116,7 +126,8 @@
         #endregion
 
         private MetroFramework.Controls.MetroTextBox answerTxtbx;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label idLbl;
+        private Bunifu.Framework.UI.BunifuCheckbox RightAnswer;
     }
 }
