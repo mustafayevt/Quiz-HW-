@@ -24,6 +24,8 @@ namespace Quiz
         {
             List<FileInfo> files = new List<FileInfo>();
             List<string> xmls = new List<string>();
+            if (!Directory.Exists("xmls"))
+                System.IO.Directory.CreateDirectory("xmls");
             foreach (var item in Directory.GetFiles("xmls"))
             {
                 files.Add(new FileInfo(item));
