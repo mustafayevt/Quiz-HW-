@@ -18,13 +18,26 @@ namespace Quiz
         public createQuestionForm()
         {
             InitializeComponent();
-            MainPanel.Controls.Add(new addQuestionUC());
+            addQuestionUC uc = new addQuestionUC();
+            uc.Disposed += refreshQuestionsID;
+            MainPanel.Controls.Add(uc);
         }
         List<QuestionBlock> questions;
 
+        private void refreshQuestionsID(object sender,EventArgs e)
+        {
+            int i = 0;
+            foreach (var item in MainPanel.Controls.OfType<addQuestionUC>())
+            {
+                item.id = i++;
+            }
+        }
+
         private void addAnswerPctrbx_Click(object sender, EventArgs e)
         {
-            MainPanel.Controls.Add(new addQuestionUC());
+            addQuestionUC uc = new addQuestionUC();
+            uc.Disposed += refreshQuestionsID;
+            MainPanel.Controls.Add(uc);
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -90,7 +103,9 @@ namespace Quiz
                 addQuestionUC.staticID = 0;
                 foreach (var item in tmp)
                 {
-                    MainPanel.Controls.Add(new addQuestionUC(item));
+                    addQuestionUC uc = new addQuestionUC(item);
+                    uc.Disposed += refreshQuestionsID;
+                    MainPanel.Controls.Add(uc);
                 }
 
             }

@@ -1,8 +1,13 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using NPOI.XWPF.UserModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,6 +29,9 @@ namespace Quiz
 
         public List<QuestionBlock> questionsBlock;
         Result result = new Result();
+
+        string report = string.Empty;
+
         int currentQuestion = 0;
         bool submited = false;
         private void LoadQuestions()
@@ -54,7 +62,7 @@ namespace Quiz
 
                 answers[i].BackColor = Color.Transparent;
                 answers[i].ForeColor = DarkMode.Value ? Color.LightCoral : Color.Aqua;
-                answers[i].Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Italic);
+                answers[i].Font = new System.Drawing.Font(FontFamily.GenericSansSerif, 12, FontStyle.Italic);
                 questionRctxtbx.Text = $"{currentQuestion + 1}) {questionsBlock[currentQuestion].Text.TrimStart()}";
                 QuestionPanel.Controls.Add(answers[i]);
             }
@@ -117,7 +125,7 @@ namespace Quiz
                     result.QuestionsAndAnswers = new Dictionary<int, int>();
                 }
             }
-            
+
             //QuestionsXML.xml
             LoadQuestions();
         }
@@ -175,8 +183,15 @@ namespace Quiz
                 {
                     result.QuestionsAndAnswers[questionsBlock[currentQuestion].id] = (item.Tag as Answer).id;
                     result.notAnswered--;
-                    if ((item.Tag as Answer).IsCorrect == "Yes") result.correct++;
-                    else result.incorrect++;
+                    if ((item.Tag as Answer).IsCorrect == "Yes")
+                    {
+                        result.correct++;
+                    }
+                    else
+                    {
+                        result.incorrect++;
+                    }
+
                     CircleProgressBar.Value += 100 / questionsBlock.Count;
                     QuestionPanel.Enabled = false;
 
@@ -199,6 +214,8 @@ namespace Quiz
             CorrectLbl.Text = $"Correct Answers {result.correct.ToString()}";
             inCorrectLbl.Text = $"Incorrect Answers {result.incorrect.ToString()}";
             notAnsweredLbl.Text = $"Not Answered {result.notAnswered.ToString()}";
+            //report
+            report += $"{CorrectLbl.Text}  -  {inCorrectLbl.Text}  -  {notAnsweredLbl.Text}\n\n";
             submited = true;
             nextPage.Location = new Point(nextPage.Location.X, nextPage.Location.Y + nextPage.Height);
             previousPage.Location = new Point(previousPage.Location.X, previousPage.Location.Y + previousPage.Height);
@@ -209,6 +226,22 @@ namespace Quiz
                 QuestionPanel.Controls.Clear();
                 return;
             }
+            //report
+            foreach (var item in result.QuestionsAndAnswers)
+            {
+                QuestionBlock tmp = questionsBlock.Find(x => x.id == item.Key);
+                report += "\n========================================\n";
+                report += $"Question ID:{tmp.id}) {tmp.Text.Replace("\n", "")}\n\n";
+                foreach (var answer in tmp.Answers)
+                {
+                    report += $"Answer ID:{answer.id}. {answer.Text.Replace("\n", "")} ";
+                    if (answer.id == item.Value) report += "<--Your answer";
+                    if (answer.IsCorrect == "Yes") report += "<--Right answer ";
+                    report += "\n";
+                }
+                report += "\n========================================\n";
+            }
+            //
             currentQuestion = 0;
             nextPage.PerformClick();
             LoadQuestions();
@@ -221,7 +254,59 @@ namespace Quiz
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            if (!submited) submitBtn.PerformClick();
+            if (MetroFramework.MetroMessageBox.Show(this, "Do You Want To Save Report?", "Save Report", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.Filter = @"Word File (.docx ,.doc)|*.docx;*.doc|PDF (.pdf)|*.pdf";
+                saveFile.ShowDialog();
+                if (Path.GetExtension(saveFile.FileName) == ".pdf")
+                {
+                    SavePdf(report, saveFile.FileName);
+                }
+                else
+                {
+                    SaveDoc(report, saveFile.FileName);
+                }
+            }
             Application.Exit();
+        }
+
+        private void SaveDoc(string content, string path)
+        {
+            using (var fs = new FileStream(path, FileMode.Create, FileAccess.Write))
+            {
+                XWPFDocument doc = new XWPFDocument();
+                var p0 = doc.CreateParagraph();
+                p0.Alignment = ParagraphAlignment.CENTER;
+                XWPFRun r0 = p0.CreateRun();
+                r0.FontFamily = "microsoft yahei";
+                r0.FontSize = 18;
+                r0.IsBold = true;
+                r0.SetText("EYEQuiz Report");
+                    var p1 = doc.CreateParagraph();
+                for (int i = 0; i < content.Length; i++)
+                {
+                    p1.Alignment = ParagraphAlignment.LEFT;
+                    p1.IndentationFirstLine = 500;
+                    XWPFRun r1 = p1.CreateRun();
+                    r1.FontFamily = "microsoft yahei";
+                    r1.FontSize = 10;
+                    if (content[i] == '\n') p1 = doc.CreateParagraph();
+                    r1.SetText(content[i].ToString());
+                }
+                doc.Write(fs);
+            }
+        }
+        private void SavePdf(string content, string path)
+        {
+            iTextSharp.text.Document doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4);
+            PdfWriter pdf = PdfWriter.GetInstance(doc, new FileStream($"{path}", FileMode.Create));
+
+            doc.Open();
+            Paragraph elements = new Paragraph(content, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 10));
+            doc.Add(elements);
+            doc.Close();
         }
 
         private void bunifuSwitch1_Click(object sender, EventArgs e)
